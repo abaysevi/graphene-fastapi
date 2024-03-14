@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+graphene
+pymongo
+graphene-pydantic
+pydantic
+starlette_graphene3
+strawberry
+magic
+python-decouple
