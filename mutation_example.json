@@ -1,0 +1,29 @@
+[
+  {
+    "query": "mutation createProduct($productName: String!, $productPrice: Float!, $uniqueCode: String!, $tax: Float!) { createProduct(productName: $productName, productPrice: $productPrice, uniqueCode: $uniqueCode, tax: $tax) { product { productName productPrice uniqueCode tax } } }",
+    "variables": {
+      "productName": "BLaBla",
+      "productPrice": 9.929,
+      "uniqueCode": "YOYO23",
+      "tax": 0.05
+    }
+  },
+  {
+    "query": "mutation ($product_name: String!, $product_price: Float!, $unique_code: String!, $tax: Float!, $quantity: Int!) { createCartItem(productName: $product_name, productPrice: $product_price, uniqueCode: $unique_code, tax: $tax, quantity: $quantity) { cartItem { productName productPrice uniqueCode tax quantity } } }",
+    "variables": {
+      "product_name": "Bike",
+      "product_price": 12.3,
+      "unique_code": "HEHE123",
+      "tax": 0.05,
+      "quantity": 1
+    }
+  },
+  {
+    "query": "mutation($cartItems: [JSONString]!, $totalAmount: Float!, $paymentOption: String!) { createSale(cartItems: $cartItems, totalAmount: $totalAmount, paymentOption: $paymentOption) { sale { cartItems { productName productPrice uniqueCode tax } totalAmount paymentOption } } }",
+    "variables": {
+      "cartItems": "[{\"productName\": \"Laptop\", \"productPrice\": 999.99, \"uniqueCode\": \"ABC123\", \"tax\": 0.1, \"quantity\": 1}, {\"productName\": \"Jacket\", \"productPrice\": 49.99, \"uniqueCode\": \"DEF456\", \"tax\": 0.05, \"quantity\": 1}, {\"productName\": \"rock\", \"productPrice\": 599.99, \"uniqueCode\": \"GHI789\", \"tax\": 0.08, \"quantity\": 1}, {\"productName\": \"baloon\", \"productPrice\": 39.99, \"uniqueCode\": \"JKL012\", \"tax\": 0.03, \"quantity\": 1}, {\"productName\": \"runurr\", \"productPrice\": 29.99, \"uniqueCode\": \"MNO345\", \"tax\": 0.06, \"quantity\": 1}]",
+      "totalAmount": 1719.95,
+      "paymentOption": "Cash"
+    }
+  }
+]

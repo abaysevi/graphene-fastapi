@@ -15,16 +15,12 @@ class CreateProduct(graphene.Mutation):
 
     # Define the logic to mutate/create the product
     async def mutate(root, info, product_name, product_price, unique_code, tax):
-        # Your logic to insert the product into the database goes here
-        # For demonstration, I'll just print the received data
         print("Received product data:")
         print("Product Name:", product_name)
         print("Product Price:", product_price)
         print("Unique Code:", unique_code)
         print("Tax:", tax)
 
-        # Assuming you have a MongoDB collection named products_collection
-        # Insert the product data into the collection
         result = products_collection.insert_one({
             "product_name": product_name,
             "product_price": product_price,
